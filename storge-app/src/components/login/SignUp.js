@@ -10,9 +10,9 @@ import Recaptcha from 'react-recaptcha'
 import Captcha from "./Captcha";
 
 const initialFieldValues = {
-    MobileNo: '0715701413',
-    DOB: '1994-06-30',
-    PIN: 'a',
+    MobileNo: '',
+    DOB: '',
+    PIN: '',
     verified: false
 
 }
@@ -26,6 +26,7 @@ function SignUp(props) {
         doHandleSubmit();
     }
     const doHandleSubmit = () => {
+        debugger
         props.signupUser(initialFieldValues);
         localStorage.setItem("mobile_no", values.MobileNo)
         values.action = props.action;
@@ -56,9 +57,9 @@ function SignUp(props) {
             temp.DOB = fieldValues.DOB ? "" : "Dob is required."
         if ('PIN' in fieldValues)
             temp.PIN = fieldValues.PIN ? "" : "Pin Code is required."
-        if (!fieldValues.verified) {
-            temp.verified = fieldValues.verified ? "" : "Please verified that your are human."
-        }
+        // if (!fieldValues.verified) {
+        //     temp.verified = fieldValues.verified ? "" : "Please verified that your are human."
+        // }
         setErrors({
             ...temp
         })
@@ -122,7 +123,7 @@ function SignUp(props) {
                     <button type="submit" className="btn btn-primary">Submit</button>
                     <br />
                     <br />
-                    <Captcha verifiedCaptcha={DoVerifiedCaptcha} />
+                    {/* <Captcha verifiedCaptcha={DoVerifiedCaptcha} /> */}
 
                 </form>
                 {error && <span >{error}</span>}

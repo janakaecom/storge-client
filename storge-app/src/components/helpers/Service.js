@@ -1,7 +1,7 @@
 import axios from "axios";
 import { authHeader } from "./Auth-Header";
-const baseUrl = "https://localhost:44369/api/"
-// const baseUrl = "http://teststore.somee.com/api/"
+// const baseUrl = "https://localhost:44369/api/"
+const baseUrl = "https://api.estorge.com/api/"
 
 
 export const service = {
